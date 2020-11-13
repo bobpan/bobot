@@ -9,13 +9,11 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-  - cron: "50 0/6 * * *" #UTC Time (减8)
+  - cron: "50 0 * * *" #UTC Time (减8)
     
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    timeout-minutes: 1440
 
     strategy:
       matrix:
@@ -32,6 +30,50 @@ jobs:
       run: |
         npm i wechaty-puppet-puppeteer
         npm i
+        
+  Startup 1st:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - name: Startup
+      #export WECHATY_LOG=verbose
+      run: node bobot.js
+      env:
+          WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+  Startup 2nd:
+    runs-on: ubuntu-latest
+    needs: Startup 1st
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - name: Startup
+      #export WECHATY_LOG=verbose
+      run: node bobot.js
+      env:
+          WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+  Startup 3rd:
+    runs-on: ubuntu-latest
+    needs: Startup 2nd
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - name: Startup
+      #export WECHATY_LOG=verbose
+      run: node bobot.js
+      env:
+          WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+  Startup 4th:
+    runs-on: ubuntu-latest
+    needs: Startup 3rd
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
