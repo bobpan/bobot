@@ -3,6 +3,11 @@
 
 name: Node.js CI
 
+env:
+  SERVER: production
+defaults:
+  run:
+    working-directory: ~/
 on:
   push:
     branches: [ main ]
