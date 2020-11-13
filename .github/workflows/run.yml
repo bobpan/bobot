@@ -45,6 +45,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: |
+        pwd
         npm i wechaty-puppet-puppeteer
         npm i
         
@@ -71,7 +72,10 @@ jobs:
           ${{ runner.os }}-
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node bobot.js
+      run: |
+        ls -l
+        pwd
+        node bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
