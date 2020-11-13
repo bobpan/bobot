@@ -13,6 +13,7 @@ on:
     
 jobs:
   build:
+    name: build bobot
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -43,6 +44,8 @@ jobs:
         npm i
         
   run_1st:
+    name: run bobot 1st
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -67,6 +70,8 @@ jobs:
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
+    name: run bobot 2nd
+    needs: [build,run_1st]
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -91,6 +96,8 @@ jobs:
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_3rd:
+    name: run bobot 3rd
+    needs: [build,run_2nd]
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -115,6 +122,8 @@ jobs:
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_4th:
+    name: run bobot 4th
+    needs: [build,run_3rd]
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
