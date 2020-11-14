@@ -18,7 +18,7 @@ on:
     
 jobs:
   build:
-    name: build and login
+    name: build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -34,15 +34,15 @@ jobs:
     - name: Install Dependencies
       run: |
         npm i
-    - name: Startup and Login
+    - name: Startup and first login
       #export WECHATY_LOG=verbose
       run: |
         node main.js
-        ls
-        node main.js
+        ls *.memory-card.json
+        cat jadetreer.memory-card.json
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
-    - name: Upload memory-card for bobot
+    - name: Upload memory-card
       uses: actions/upload-artifact@v2
       with:
         name: memory-card
