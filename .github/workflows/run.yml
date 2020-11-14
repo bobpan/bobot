@@ -34,6 +34,10 @@ jobs:
     - name: Install Dependencies
       run: |
         npm i
+    - name: Download memory-card for bobot
+      uses: actions/download-artifact@v2
+      with:
+        name: memory-card
     - name: Startup and Login
       #export WECHATY_LOG=verbose
       run: |
