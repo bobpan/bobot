@@ -46,7 +46,7 @@ const {
         .catch(error => console.error)
       
       if(status===4) {
-          log.info('Bot', `Login successed`)
+          log.info('Bot', `Login successed via scan the QR code`)
           //bot.stop()  //会清除用户的个人登入信息
           process.exit()
       } else console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
