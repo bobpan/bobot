@@ -50,12 +50,12 @@ const {
         const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
         await sender.say(fileBox)
         return
-      } else if (/^link$/i.test(m.text())) {
+      } else if (/^wechaty$/i.test(m.text())) {
           const linkPayload = new UrlLnik({
-              description : 'Netty',
-              thumbnailUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/48MFTQpxichmmxEoXZ1w7eno72H2MQdx1WC6JiaVdYRmwAp4MCcQbctE2IE7jWqkWOlgMPqMBXVAdR1N46xEibvoQ/640?wx_fmt=jpeg&wxtype=jpeg&wxfrom=0',
-              title : 'Netty',
-              url : 'http://mp.weixin.qq.com/s?__biz=MzU2MDU3MzE1Mg==&mid=2247484375&idx=1&sn=5ee91b0a8607a1766b5212a23d3c9179&chksm=fc04bc58cb73354e798403bcc03e293149bb115a0755940e334c0fbe33d7c3b0b0797120a213&scene=0&xtrack=1#rd', 
+              title : 'Wechaty',
+              description : 'Wechaty 是一个开源的的对话机器人 SDK，支持 个人号 微信。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。',
+              thumbnailUrl: 'https://gblobscdn.gitbook.com/spaces%2F-LuRUjlq4i6yFFYQXed-%2Favatar-1585395468022.png?alt=media',
+              url : 'https://wechaty.js.org/v/zh/', 
           })
           await msg.say(linkPayload)
       }
