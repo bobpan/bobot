@@ -46,7 +46,9 @@ const {
         .catch(error => console.error)
         
       console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
-      if(${status}===4) {
+      
+      if(status===4) {
+          console.info(`Login successed: `)
           bot.stop()
           process.exit()
       }
