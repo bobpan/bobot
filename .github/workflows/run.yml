@@ -5,9 +5,9 @@ name: run bobot
 
 env:
   SERVER: production
-defaults:
-  run:
-    working-directory: ../
+#defaults:
+#  run:
+#    working-directory: ../
 on:
   push:
     branches: [ main ]
@@ -18,7 +18,7 @@ on:
     
 jobs:
   build:
-    name: build bobot
+    name: build bobot and login
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -33,17 +33,19 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: |
-        cd bobot
-        npm i wechaty-puppet-puppeteer
         npm i
+    - name: Startup and Login
+      #export WECHATY_LOG=verbose
+      run: |
+        pwd
+        node bobot.js
+      env:
+          WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
-        name: bobot
+        name: bobot-userdata
         path: |
-          event
-          node_modules
-          bobot.js
           package.json
 
   run_1st:
@@ -55,6 +57,14 @@ jobs:
         os: [ubuntu-latest]
         node-version: [14.x]
     steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
+      run: |
+        npm i
     - name: Download artifact for bobot
       uses: actions/download-artifact@v2
       with:
@@ -62,8 +72,7 @@ jobs:
     - name: Startup
       #export WECHATY_LOG=verbose
       run: |
-        pwd
-        node bobot/bobot.js
+        node bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
@@ -75,18 +84,14 @@ jobs:
         os: [ubuntu-latest]
         node-version: [14.x]
     steps:
-    - name: Cache bobot workspace
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-bobot
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ./
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+        node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
+      run: |
+        npm i
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
@@ -101,18 +106,11 @@ jobs:
         os: [ubuntu-latest]
         node-version: [14.x]
     steps:
-    - name: Cache bobot workspace
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-bobot
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ./
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+        node-version: ${{ matrix.node-version }}
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
@@ -127,18 +125,11 @@ jobs:
         os: [ubuntu-latest]
         node-version: [14.x]
     steps:
-    - name: Cache bobot workspace
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-bobot
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ./
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+        node-version: ${{ matrix.node-version }}
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
