@@ -30,13 +30,14 @@ jobs:
     - name: Deploy to work path 
       run: |
         pwd
-        ls -l /
-        ls -l */
+        ls -l ../
+        ls -l ./
         ls -l **/
-        ls -l ***/
         cp -r ***/ ~/
         ls -l ~/
-        cd ~/
+        ls -l ~/work
+        ls -l ~/runners
+        cd ~/work
         pwd
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
