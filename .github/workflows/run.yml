@@ -38,6 +38,9 @@ jobs:
       #export WECHATY_LOG=verbose
       run: |
         pwd
+        ls
+        node bobot.js
+        ls
         node bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
@@ -72,6 +75,7 @@ jobs:
     - name: Startup
       #export WECHATY_LOG=verbose
       run: |
+        ls
         node bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
