@@ -40,7 +40,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: bobot
-        path: ../
 
   run_1st:
     name: run bobot 1st
