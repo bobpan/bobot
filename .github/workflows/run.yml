@@ -27,18 +27,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Cache bobot workspace
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-bobot
-      with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ./
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+    - name: Deploy to work path 
+      run: |
+        ls
+        cp ./ ~/
+        ls
+        cd ~/bobot
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
