@@ -40,7 +40,10 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: bobot
-        path: bobot
+        path: |
+          event
+          bobot.js
+          package.json
 
   run_1st:
     name: run bobot 1st
