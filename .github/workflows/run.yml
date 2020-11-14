@@ -42,6 +42,7 @@ jobs:
         name: bobot
         path: |
           event
+          node_modules
           bobot.js
           package.json
 
@@ -62,8 +63,7 @@ jobs:
       #export WECHATY_LOG=verbose
       run: |
         pwd
-        ls
-        node bobot.js
+        node bobot/bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
