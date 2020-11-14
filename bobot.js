@@ -15,7 +15,7 @@ const {
   `
   console.info(welcome)
   
-  const bot = Wechaty.instance({ profile: 'bobot' })
+  const bot = Wechaty.instance({ name: 'jadetreer' })
   
   bot
     .on('scan', (qrcode, status) => {
