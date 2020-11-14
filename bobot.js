@@ -15,11 +15,10 @@ const {
   `
   console.info(welcome)
   
-  const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
+  const bot = Wechaty.instance({ profile: bobot })
   
   bot
     .on('scan', (qrcode, status) => {
-      
       
       const token = process.env.WXCOM_BOT_KEY
       if (!token) {
