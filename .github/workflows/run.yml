@@ -39,8 +39,7 @@ jobs:
       #export profile=jadetreer
       run: |
         node main.js
-        ls *.memory-card.json
-        echo ******记住登入状态:
+        ls
         cat *.memory-card.json
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
