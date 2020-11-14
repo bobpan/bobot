@@ -37,7 +37,7 @@ jobs:
     - name: Startup and Login
       #export WECHATY_LOG=verbose
       run: |
-        node bobot.js
+        node main.js
         ls
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
@@ -73,7 +73,7 @@ jobs:
       #export WECHATY_LOG=verbose
       run: |
         ls
-        node bobot.js
+        node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
@@ -99,7 +99,7 @@ jobs:
         name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node bobot.js
+      run: node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_3rd:
@@ -125,7 +125,7 @@ jobs:
         name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node bobot.js
+      run: node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_4th:
@@ -151,6 +151,6 @@ jobs:
         name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node bobot.js
+      run: node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
