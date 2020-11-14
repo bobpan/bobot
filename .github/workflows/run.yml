@@ -31,8 +31,8 @@ jobs:
       run: |
         ls -l /usr
         ls -l /data
-        cp -r ../ ~/
-        cd ~/bobot
+        cp -r ../ /data
+        cd /data/bobot
         pwd
         ls
     - name: Use Node.js ${{ matrix.node-version }}
@@ -41,7 +41,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: |
-        cd ~/bobot
+        cd /data/bobot
         pwd
         npm i wechaty-puppet-puppeteer
         npm i
@@ -59,7 +59,7 @@ jobs:
     - name: Startup
       #export WECHATY_LOG=verbose
       run: |
-        cd ~/bobot
+        cd cd /data/bobot
         pwd
         ls
         node bobot.js
