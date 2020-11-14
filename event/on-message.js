@@ -1,6 +1,7 @@
 const {
     Message,
     FileBox,
+    UrlLnik,
     Wechaty,
   }             = require('wechaty')
   
@@ -49,7 +50,15 @@ const {
         const fileBox = FileBox.fromUrl('https://7265-release-66-1257636227.tcb.qcloud.la/qrcode/%E5%91%A8%E6%9D%B0%E4%BC%A6%E5%94%B1%E7%9A%84%E4%B8%8D%E8%83%BD%E8%AF%B4%E7%9A%84%E7%A7%98%E5%AF%86.png?sign=ac882ac5c7dfd5a736d411f8c0eecb86&t=1605356008')
         await sender.say(fileBox)
         return
-      }
+      } else if (/^link$/i.test(m.text())) {
+          const linkPayload = new UrlLnik({
+              description : 'Netty',
+              thumbnailUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/48MFTQpxichmmxEoXZ1w7eno72H2MQdx1WC6JiaVdYRmwAp4MCcQbctE2IE7jWqkWOlgMPqMBXVAdR1N46xEibvoQ/640?wx_fmt=jpeg&wxtype=jpeg&wxfrom=0',
+              title : 'Netty',
+              url : 'http://mp.weixin.qq.com/s?__biz=MzU2MDU3MzE1Mg==&mid=2247484375&idx=1&sn=5ee91b0a8607a1766b5212a23d3c9179&chksm=fc04bc58cb73354e798403bcc03e293149bb115a0755940e334c0fbe33d7c3b0b0797120a213&scene=0&xtrack=1#rd', 
+          })
+          await msg.say(linkPayload)
+      } .start()
   
       /**
        *
