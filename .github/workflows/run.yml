@@ -35,15 +35,16 @@ jobs:
       run: |
         npm i wechaty-puppet-puppeteer
         npm i
+        ls -l
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
         name: bobot
         path: ｜
           event
+          node_modules
           bobot.js
           package.json
-          node_modules
 
   run_1st:
     name: run bobot 1st
