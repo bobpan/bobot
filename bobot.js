@@ -46,8 +46,8 @@ const {
         .catch(error => console.error)
       
       if(status===4) {
-          console.info(`Login successed: `)
-          //bot.stop()
+          log.info('Bot', `Login successed`))
+          //bot.stop()  //会清除用户的个人登入信息
           process.exit()
       } else console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
     })
@@ -57,9 +57,7 @@ const {
       await this.say(`wechaty logined`)
     })
   
-    .on('logout',     user => {
-      log.info('Bot', `${user.name()} logouted`)
-    })
+    .on('logout',     user =>  log.info('Bot', `${user.name()} logouted`))
     .on('error',      error => log.info('Bot', 'error: %s', error))
   
     .on('message',    onMessage)
