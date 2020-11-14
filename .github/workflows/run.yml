@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to work path 
       run: |
         ls
-        cp ./ ~/
+        cp **/ ~/
         ls
         cd ~/bobot
     - name: Use Node.js ${{ matrix.node-version }}
