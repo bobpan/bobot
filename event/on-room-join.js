@@ -17,7 +17,7 @@ const {
        *
        */
   
-      if (await room.topic() !== 'ding') {
+      if (await room.topic() !== 'bobot') {
         await this.say('Room ' + await room.topic()
                         + ' got new memeber ' + inviteeName
                         + ' invited by ' + inviter.name(),
@@ -33,7 +33,7 @@ const {
       }
   
       await room.say('请勿私自拉人。需要拉人请加我', inviter)
-      await room.say('请先加我好友，然后我来拉你入群。先把你移出啦。', inviteeList)
+      await room.say('请先加我好友，然后给我发送bobot来拉你入群。先把你移出啦。', inviteeList)
   
       inviteeList.forEach(async c => {
         await room.del(c)
