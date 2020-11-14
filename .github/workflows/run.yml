@@ -36,6 +36,7 @@ jobs:
         npm i wechaty-puppet-puppeteer
         npm i
         ls -l
+        ls -l bobot
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
