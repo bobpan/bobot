@@ -27,26 +27,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Deploy to work path 
-      run: |
-        ls -l /usr
-        ls -l /data
-        cp -r ../ /data
-        cd /data/bobot
-        pwd
-        ls
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: |
-        cd /data/bobot
-        pwd
         npm i wechaty-puppet-puppeteer
         npm i
         ls
-        
+    - name: Upload artifact for bobot
+      uses: actions/upload-artifact@v2
+      with:
+        name: bobot
+        path: ../
+
   run_1st:
     name: run bobot 1st
     needs: build
@@ -56,13 +51,16 @@ jobs:
         os: [ubuntu-latest]
         node-version: [14.x]
     steps:
+    - name: Download artifact for bobot
+      uses: actions/download-artifact@v2
+      with:
+        name: bobot
     - name: Startup
       #export WECHATY_LOG=verbose
       run: |
-        cd cd /data/bobot
         pwd
         ls
-        node bobot.js
+        node bobot/bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
