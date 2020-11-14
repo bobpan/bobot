@@ -15,7 +15,7 @@ const {
   `
   console.info(welcome)
   
-  const bot = Wechaty.instance({ profile: bobot })
+  const bot = Wechaty.instance({ profile: 'bobot' })
   
   bot
     .on('scan', (qrcode, status) => {
@@ -42,12 +42,8 @@ const {
                 content: `[登入二维码](${qrcodeImageUrl})`
               }
             })
-        .then(res => {
-          console.log(`状态码: ${res.statusCode}`)
-        })
-        .catch(error => {
-          console.error(error)
-        })
+        .then(res => console.info)
+        .catch(error => console.error)
         
       console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
     })
