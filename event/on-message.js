@@ -57,7 +57,7 @@ const {
               thumbnailUrl: 'https://wechaty.js.org/assets/2020/commandline-filter/logo.png',
               url : 'https://wechaty.js.org/v/zh/', 
           })
-          await msg.say(linkPayload)
+          await sender.say(linkPayload)
           return
       }
   
