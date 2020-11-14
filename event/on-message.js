@@ -54,7 +54,7 @@ const {
           const linkPayload = new UrlLnik({
               title : 'Wechaty',
               description : 'Wechaty 是一个开源的的对话机器人 SDK，支持 个人号 微信。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。',
-              thumbnailUrl: 'https://gblobscdn.gitbook.com/spaces%2F-LuRUjlq4i6yFFYQXed-%2Favatar-1585395468022.png?alt=media',
+              thumbnailUrl: 'https://wechaty.js.org/assets/2020/commandline-filter/logo.png',
               url : 'https://wechaty.js.org/v/zh/', 
           })
           await msg.say(linkPayload)
