@@ -57,7 +57,10 @@ const {
       await this.say(`wechaty logined`)
     })
   
-    .on('logout',     user =>  log.info('bobot ｜', `${user.name()} logouted`))
+    .on('logout',     user =>  {
+      log.info('bobot ｜', `${user.name()} logouted`)
+      process.exit()
+    })
     .on('error',      error => log.info('bobot ｜', 'error: %s', error))
   
     .on('message',    onMessage)
