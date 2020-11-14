@@ -55,7 +55,7 @@ const {
   
     .on('logout',     user => {
       log.info('Bot', `${user.name()} logouted`)
-      .stop()
+      bot.stop()
     })
     .on('error',      error => log.info('Bot', 'error: %s', error))
   
