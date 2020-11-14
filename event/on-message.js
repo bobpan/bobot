@@ -50,7 +50,7 @@ const {
         const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
         await sender.say(fileBox)
         return
-      } else if (/^wechaty$/i.test(m.text())) {
+      } else if (/^wechaty$/i.test(content)) {
           const linkPayload = new UrlLnik({
               title : 'Wechaty',
               description : 'Wechaty 是一个开源的的对话机器人 SDK，支持 个人号 微信。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。',
@@ -58,6 +58,7 @@ const {
               url : 'https://wechaty.js.org/v/zh/', 
           })
           await msg.say(linkPayload)
+          return
       }
   
       /**
