@@ -39,10 +39,6 @@ jobs:
       run: |
         pwd
         node bobot.js
-        ls -l
-        ls -l .../
-        ls -l ../
-        ls -l ./
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
     - name: Upload memory-card for bobot
