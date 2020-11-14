@@ -46,19 +46,19 @@ const {
         .catch(error => console.error)
       
       if(status===4) {
-          log.info('Bot', `Login successed via scan the QR code`)
+          log.info('bobot ｜', `Login successed via scan the QR code`)
           //bot.stop()  //会清除用户的个人登入信息
           process.exit()
       } else console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
     })
   
     .on('login', async function (user) {
-      log.info('Bot', `${user.name()} logined`)
+      log.info('bobot ｜', `${user.name()} logined`)
       await this.say(`wechaty logined`)
     })
   
-    .on('logout',     user =>  log.info('Bot', `${user.name()} logouted`))
-    .on('error',      error => log.info('Bot', 'error: %s', error))
+    .on('logout',     user =>  log.info('bobot ｜', `${user.name()} logouted`))
+    .on('error',      error => log.info('bobot ｜', 'error: %s', error))
   
     .on('message',    onMessage)
     .on('friendship', onFriendship)
