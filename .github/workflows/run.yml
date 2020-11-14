@@ -29,7 +29,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy to work path 
       run: |
-        cp -r ../ ~/
+        ls -l /
+        mv -r ../ ~/
         cd ~/bobot
         pwd
         ls
@@ -39,9 +40,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: |
-        ls -l
+        cd ~/bobot
+        pwd
         npm i wechaty-puppet-puppeteer
         npm i
+        ls
         
   run_1st:
     name: run bobot 1st
