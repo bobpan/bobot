@@ -30,6 +30,9 @@ jobs:
     - name: Deploy to work path 
       run: |
         pwd
+        ls -l /
+        ls -l */
+        ls -l **/
         ls -l ***/
         cp -r ***/ ~/
         ls -l ~/
