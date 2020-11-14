@@ -37,9 +37,9 @@ jobs:
     - name: Startup and first login
       #export WECHATY_LOG=verbose
       run: |
+        export profile=jadetreer
         node main.js
         ls *.memory-card.json
-        cat jadetreer.memory-card.json
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
     - name: Upload memory-card
@@ -73,7 +73,7 @@ jobs:
     - name: Startup
       #export WECHATY_LOG=verbose
       run: |
-        ls
+        ls *.memory-card.json
         node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
@@ -100,7 +100,9 @@ jobs:
         name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node main.js
+      run: |
+        ls *.memory-card.json
+        node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_3rd:
@@ -126,7 +128,9 @@ jobs:
         name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node main.js
+      run: |
+        ls *.memory-card.json
+        node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_4th:
@@ -152,6 +156,8 @@ jobs:
         name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
-      run: node main.js
+      run: |
+        ls *.memory-card.json
+        node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
