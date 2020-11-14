@@ -33,19 +33,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
       run: |
+        cd bobot
         npm i wechaty-puppet-puppeteer
         npm i
-        ls -l
-        ls -l bobot
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
         name: bobot
-        path: ｜
-          event
-          node_modules
-          bobot.js
-          package.json
+        path: bobot
 
   run_1st:
     name: run bobot 1st
