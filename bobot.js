@@ -56,6 +56,7 @@ const {
     .on('logout',     user => {
       log.info('Bot', `${user.name()} logouted`)
       bot.stop()
+      process.exit(200)
     })
     .on('error',      error => log.info('Bot', 'error: %s', error))
   
