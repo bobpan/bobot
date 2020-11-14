@@ -5,9 +5,9 @@ name: run bobot
 
 env:
   SERVER: production
-#defaults:
-  #run:
-    #working-directory: ~/
+defaults:
+  run:
+    working-directory: ../
 on:
   push:
     branches: [ main ]
@@ -36,7 +36,7 @@ jobs:
         npm i wechaty-puppet-puppeteer
         npm i
         cd ../
-        ls
+        ls -l
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
