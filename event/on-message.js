@@ -14,11 +14,10 @@ const {
                   + ':' + message,
       )
   
-      if (message.self() || room) {
-        console.info('message is sent from myself, or inside a room.')
-        process.exit()
-        return
-      }
+      //if (message.self() || room) {
+      //  console.info('message is sent from myself, or inside a room.')
+      //  return
+      //}
   
       /********************************************
        *
