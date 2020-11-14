@@ -29,8 +29,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy to work path 
       run: |
-        ls -l /
-        mv -r ../ ~/
+        ls -l /usr
+        ls -l /data
+        cp -r ../ ~/
         cd ~/bobot
         pwd
         ls
