@@ -45,9 +45,9 @@ jobs:
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
-        name: bobot-userdata
+        name: memory-card
         path: |
-          package.json
+          bobot.memory-card.json
 
   run_1st:
     name: run bobot 1st
@@ -69,7 +69,7 @@ jobs:
     - name: Download artifact for bobot
       uses: actions/download-artifact@v2
       with:
-        name: bobot
+        name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
       run: |
@@ -93,6 +93,10 @@ jobs:
     - name: Install Dependencies
       run: |
         npm i
+    - name: Download artifact for bobot
+      uses: actions/download-artifact@v2
+      with:
+        name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
@@ -112,6 +116,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
+      run: |
+        npm i
+    - name: Download artifact for bobot
+      uses: actions/download-artifact@v2
+      with:
+        name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
@@ -131,6 +142,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
+      run: |
+        npm i
+    - name: Download artifact for bobot
+      uses: actions/download-artifact@v2
+      with:
+        name: memory-card
     - name: Startup
       #export WECHATY_LOG=verbose
       run: node bobot.js
