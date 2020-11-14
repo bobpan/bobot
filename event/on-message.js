@@ -1,7 +1,6 @@
 const {
     Message,
     FileBox,
-    UrlLink,
     Wechaty,
   }             = require('wechaty')
   
