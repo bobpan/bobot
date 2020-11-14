@@ -50,7 +50,7 @@ jobs:
       with:
         name: memory-card
         path: |
-          bobot.memory-card.json
+          *.memory-card.json
 
   run_1st:
     name: run bobot 1st
