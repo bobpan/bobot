@@ -29,10 +29,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy to work path 
       run: |
-        ls */
-        cp -r **/ ~/
-        ls ~/
+        pwd
+        ls -l ***/
+        cp -r ***/ ~/
+        ls -l ~/
         cd ~/
+        pwd
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
