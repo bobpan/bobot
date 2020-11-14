@@ -44,14 +44,12 @@ const {
             })
         .then(res => console.info)
         .catch(error => console.error)
-        
-      console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
       
       if(status===4) {
           console.info(`Login successed: `)
-          bot.stop()
+          //bot.stop()
           process.exit()
-      }
+      } else console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
     })
   
     .on('login', async function (user) {
