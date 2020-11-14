@@ -34,11 +34,11 @@ const {
         if (!bobotR) return
   
         if (await bobotR.has(sender)) {
-          await sender.say('不用重复加入，你已经在bobot微信群里面啦')
+          await sender.say('你已经在bobot微信群里面啦')
           return
         }
   
-        await sender.say('已将你拉进bobot微信群')
+        await sender.say('已将你拉进bobot微信群啦')
         await bobotR.add(sender)
         return
   
