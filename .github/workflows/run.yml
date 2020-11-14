@@ -35,13 +35,15 @@ jobs:
       run: |
         npm i wechaty-puppet-puppeteer
         npm i
-        cd ../
-        ls -l
     - name: Upload artifact for bobot
       uses: actions/upload-artifact@v2
       with:
         name: bobot
-        path: event
+        path: ｜
+          event
+          bobot.js
+          package.json
+          node_modules
 
   run_1st:
     name: run bobot 1st
@@ -61,7 +63,7 @@ jobs:
       run: |
         pwd
         ls
-        node bobot/bobot.js
+        node bobot.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
