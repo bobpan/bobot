@@ -46,6 +46,10 @@ const {
         .catch(error => console.error)
         
       console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
+      if(${status}===4) {
+          bot.stop()
+          process.exit()
+      }
     })
   
     .on('login', async function (user) {
@@ -55,8 +59,6 @@ const {
   
     .on('logout',     user => {
       log.info('Bot', `${user.name()} logouted`)
-      bot.stop()
-      process.exit()
     })
     .on('error',      error => log.info('Bot', 'error: %s', error))
   
