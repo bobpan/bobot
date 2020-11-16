@@ -81,7 +81,7 @@ jobs:
   run_2nd:
     name: run 2nd
     needs: [build, run_1st]
-    if: ${{cancelled}}
+    if: ${{cancelled()}}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -110,7 +110,7 @@ jobs:
   run_3rd:
     name: run 3rd
     needs: [build, run_2nd]
-    if: ${{cancelled}}
+    if: ${{cancelled()}}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -139,7 +139,7 @@ jobs:
   run_4th:
     name: run 4th
     needs: [build, run_3rd]
-    if: ${{cancelled}}
+    if: ${{cancelled()}}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
