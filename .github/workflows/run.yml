@@ -80,7 +80,7 @@ jobs:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_2nd:
     name: run 2nd
-    needs: [build,run_1st]
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -108,7 +108,7 @@ jobs:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_3rd:
     name: run 3rd
-    needs: [build,run_2nd]
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -136,7 +136,7 @@ jobs:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
   run_4th:
     name: run 4th
-    needs: [build,run_3rd]
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
