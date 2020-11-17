@@ -49,8 +49,11 @@ const {
       
       if(status===4 && keepLogin) {
           log.info('bobot ｜', `Keeped login session via scan the QR code`)
-          //bot.stop()  //会清除用户的个人登入信息
-          process.exit()
+              setTimeout(function () {  //等待保持会话的配置文件生成
+                  //bot.stop()  //会清除用户的个人登入信息
+                  process.exit()
+                  resolve();
+                }, 1500);
       } else console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
     })
   
