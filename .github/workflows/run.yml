@@ -43,6 +43,7 @@ jobs:
         cat *.memory-card.json
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+          keepLogin: true
     - name: Upload memory-card
       uses: actions/upload-artifact@v2
       with:
