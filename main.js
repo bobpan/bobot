@@ -21,8 +21,10 @@ const {
     .on('scan', (qrcode, status) => {
       
       const token = process.env.WXCOM_BOT_KEY
+      const keepLogin = process.env.keepLogin||false
+      
       if (!token) {
-        log.error('qyapi webhook', `
+        log.error('bobot ｜', `
           需要企业微信机器人的Token发送登入二维码，
           请先维护Secrets：WXCOM_BOT_KEY
         `)
@@ -45,8 +47,8 @@ const {
         .then(res => console.info)
         .catch(error => console.error)
       
-      if(status===4) {
-          log.info('bobot ｜', `Login successed via scan the QR code`)
+      if(status===4 && keepLogin) {
+          log.info('bobot ｜', `Keeped login session via scan the QR code`)
           //bot.stop()  //会清除用户的个人登入信息
           process.exit()
       } else console.info(`${qrcodeImageUrl}\n[${status}] Scan QR Code in above url to login: `)
