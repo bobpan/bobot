@@ -49,6 +49,8 @@ const {
         const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
         await sender.say(fileBox)
         return
+      } else if (/^exit/i.test(content)) {
+        process.exit()
       }
   
       /**
