@@ -51,7 +51,7 @@ const {
         return
       } 
     
-      if (message.self() || /^exit/i.test(content)) {
+      if (message.self() && /^exit/i.test(content)) {
         await sender.say('***请求退出成功***')
         process.exit()
       }
