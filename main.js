@@ -58,7 +58,7 @@ const {
     })
   
     .on('login', async function (user) {
-      log.info('bobot ｜', `${user.name()} logined`)
+      log.info('bobot ｜', `${user.name()} logined, send "exit" to exit bobot`)
       await this.say(`wechaty logined`)
     })
   
