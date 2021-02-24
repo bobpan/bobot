@@ -29,8 +29,8 @@ const {
         3000,
       )
   
-      if (request.hello() === 'ding') {
-        const myRoom = await this.Room.find({ topic: 'ding' })
+      if (request.hello() === 'bobot') {
+        const myRoom = await this.Room.find({ topic: 'bobot' })
         if (!myRoom) return
         setTimeout(
           async _ => {
