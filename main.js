@@ -30,7 +30,7 @@ const {
         `)
         throw new Error('请先维护Secrets：WXCOM_BOT_KEY')
       }
-      const api = `https://api.qrserver.com/v1/create-qr-code/?data=${qrcode}`
+      const qrcodeImageUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${qrcode}`
       //const qrcodeImageUrl = [
       //  'https://wechaty.js.org/qrcode/',
       //  encodeURIComponent(qrcode),
