@@ -33,7 +33,7 @@ const {
       }
   
       await room.say('请勿私自拉人。需要拉人请加我', inviter)
-      await room.say('请先加我好友，然后给我发送bobot来拉你入群。先把你移出啦。', inviteeList)
+      await room.say('请先加我好友并留言bobot，将自动拉你入群。先把你移出啦。', inviteeList)
   
       inviteeList.forEach(async c => {
         await room.del(c)
