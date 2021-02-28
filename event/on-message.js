@@ -42,7 +42,7 @@ const {
           console.log(topic)
           await message.say('找到微信群：' + topic)
           if (await bobotR.has(sender)) {
-            await sender.say('你已经在bobot微信群里面啦')
+            await sender.say('你已经在群里面啦')
           } else {
             await sender.say('已将你拉进微信群啦')
             await bobotR.add(sender)
