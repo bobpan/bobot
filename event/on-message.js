@@ -49,7 +49,14 @@ const {
           }
           return
         } else {
-          await sender.say('没有找到这个群，如果是您的群希望被人搜到，拉我进群就可以啦')
+          if (/^bpan1/i.test(content)) {
+            await sender.say('对对对，我就是沃尔玛那枚小小的产品经理')
+            return
+          } else if (/^音乐/i.test(content)) {
+            const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
+            await sender.say(fileBox)
+            return
+          } else await sender.say('没有找到这个群，如果是您的群希望被人搜到，拉我进群就可以啦')
         } 
         
         /**
@@ -58,15 +65,6 @@ const {
          *
          */
         /*********************************************/
-
-        if (/^bpan1/i.test(content)) {
-          await sender.say('对对对，我就是沃尔玛那枚小小的产品经理')
-          return
-        } else if (/^音乐/i.test(content)) {
-          const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
-          await sender.say(fileBox)
-          return
-        }
       }
     } catch (e) {
       console.error(e)
