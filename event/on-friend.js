@@ -24,7 +24,8 @@ const {
   
       setTimeout(
         async _ => {
-          await contact.say('thank you for adding me')
+          await contact.say('你好，' + contact.name() + '，我可以提供微信群搜索服务，输入关键字并可快速查找和加群，快试试吧（例：bobot）')
+          await contact.say('如果您也有群希望被人搜到，只需要拉我进群就行啦')
         },
         3000,
       )
