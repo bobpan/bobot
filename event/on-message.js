@@ -26,7 +26,7 @@ const {
         if (room ) return
         // Message discarded because its TOO OLD(than 1 minute)
         if (message.age() > 60) return
-        //非Message#Text类型
+        // 非Message#Text类型
         if(message.type() != this.Message.Type.Text) return
         /********************************************
          *
@@ -44,15 +44,15 @@ const {
           if (await bobotR.has(sender)) {
             await sender.say('你已经在群里面啦')
           } else {
-            await sender.say('已将你拉进微信群啦')
             await bobotR.add(sender)
+            await sender.say('已拉您进群：' + topic)
           }
           return
         } else {
           if (/^bpan1/i.test(content)) {
             await sender.say('对对对，我就是沃尔玛那枚小小的产品经理')
             return
-          } else if (/^音乐/i.test(content)) {
+          } else if (/^(音乐|乐曲多|我要谢谢你)/i.test(content)) {
             const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
             await sender.say(fileBox)
             return
