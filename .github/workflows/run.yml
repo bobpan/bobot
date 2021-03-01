@@ -44,7 +44,11 @@ jobs:
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
           keepLogin: true
-    - uses: actions-x/commit@v2
+    # make the changes between checkout and push
+    - name: push
+      uses: actions-x/commit@v2
+      with:
+        files: bobot.memory-card.json
     - name: Upload memory-card
       uses: actions/upload-artifact@v2
       with:
