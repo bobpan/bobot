@@ -45,11 +45,11 @@ jobs:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
           keepLogin: true
     # make the changes between checkout and push
-    - name: push
-      uses: actions-x/commit@v2
-      with:
-        files: bobot.memory-card.json
-        token: ${{ secrets.PUSH_SECRET_TOKEN }}
+    #- name: push
+    #  uses: actions-x/commit@v2
+    #  with:
+    #    files: bobot.memory-card.json
+    #    token: ${{ secrets.PUSH_SECRET_TOKEN }}
     - name: Upload memory-card
       uses: actions/upload-artifact@v2
       with:
