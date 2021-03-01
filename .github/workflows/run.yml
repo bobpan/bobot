@@ -41,8 +41,6 @@ jobs:
       #export profile=jadetreer
       run: |
         node main.js
-        ls
-        cat *.memory-card.json
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
           keepLogin: true
