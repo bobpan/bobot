@@ -14,7 +14,7 @@
       "type": "git",
       "url": "git+https://github.com/bobpan/bobot.git"
     },
-    "keywords": [bobot],
+    "keywords": ["bobot","wechaty"],
     "author": "Bob Pan",
     "license": "Apache-2.0",
     "bugs": {
