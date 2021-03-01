@@ -49,6 +49,7 @@ jobs:
       uses: actions-x/commit@v2
       with:
         files: bobot.memory-card.json
+        token: ${{ secrets.PUSH_SECRET_TOKEN }}
     - name: Upload memory-card
       uses: actions/upload-artifact@v2
       with:
