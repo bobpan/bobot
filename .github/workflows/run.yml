@@ -14,7 +14,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-  - cron: "11 0 * * *" #UTC Time (减8)
+  - cron: "10 0 * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
