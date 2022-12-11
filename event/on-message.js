@@ -29,12 +29,14 @@
         if (message.age() > 60) return
         // 非Message#Text类型
         if(message.type() != this.Message.Type.Text) return
+       
+       
+        console.log('开始对话')
         /********************************************
          *
          * 默认加群动作
          *
          */
-
         await message.say('查找微信群：' + content)
         const bobotR = await this.Room.find({ topic: new RegExp(content, 'i') })
         console.log(content,bobotR)
