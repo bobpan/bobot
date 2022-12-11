@@ -1,8 +1,8 @@
-const {
+  import {
     Friendship,
     Wechaty,
     // Room,
-  }                 = require('wechaty')
+  } from ('wechaty')
   
   async function onFriendship (
     request,

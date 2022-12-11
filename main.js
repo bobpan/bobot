@@ -1,12 +1,11 @@
-const {
+  import {
     config,
     Wechaty,
     log,
-  }           = require('wechaty')
-  
-  const { onMessage }      = require('./event/on-message')
-  const { onFriendship }   = require('./event/on-friend')
-  const { onRoomJoin }     = require('./event/on-room-join')
+  }                         from ('wechaty')
+  import { onMessage }      from ('./event/on-message')
+  import { onFriendship }   from ('./event/on-friend')
+  import { onRoomJoin }     from ('./event/on-room-join')
   
   const welcome = `
   =============== Powered by Wechaty ===============

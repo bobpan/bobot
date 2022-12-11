@@ -1,8 +1,8 @@
-const {
+import {
     Contact,
     Room,
     Wechaty,
-  }             = require('wechaty')
+  }  from ('wechaty')
   
   async function onRoomJoin (
     room,

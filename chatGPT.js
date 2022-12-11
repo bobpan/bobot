@@ -1,4 +1,4 @@
-  const { ChatGPTAPI }  = import('chatgpt')
+  import { ChatGPTAPI, ChatGPTConversation } from "chatgpt";
 
   // 定义ChatGPT的配置
   const config = {
