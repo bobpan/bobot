@@ -20,7 +20,13 @@
         if (/^exit/i.test(content)) {
           await sender.say('请求退出')
           process.exit()
-        } else return
+        } else {
+           console.log('🚀🚀🚀 / content', content)
+           const reply = await getChatGPTReply(content)
+           console.log('🚀🚀🚀 / reply', reply)
+           await sender.say(reply)
+          return
+        }
       } else {
         if (!sender) return
         // message is inside a room.
@@ -54,12 +60,6 @@
         } else {
           if (/^bpan1/i.test(content)) {
             await sender.say('对对对，我就是沃尔玛那枚小小的产品经理')
-            return
-          } else if (/^chatgpt/i.test(content)) {
-              console.log('🚀🚀🚀 / content', content)
-              const reply = await getChatGPTReply(content)
-              console.log('🚀🚀🚀 / reply', reply)
-              await sender.say(reply)
             return
           } else if (/^(音乐|乐曲多|我要谢谢你)/i.test(content)) {
             const fileBox = FileBox.fromUrl('https://7465-test-666666-1257636227.tcb.qcloud.la/jay%20zhou.jpeg?sign=94ead5a2ea2bffe9a75cb91dec259bd0&t=1605359493')
