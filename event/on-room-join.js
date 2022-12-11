@@ -1,4 +1,4 @@
-  import { Contact, Room, Wechaty }  from ('wechaty');
+  import { Contact, Room, Wechaty }  from "wechaty";
   
   async function onRoomJoin (
     room,

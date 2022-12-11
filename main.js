@@ -1,7 +1,7 @@
-  import { config, Wechaty,log  }  from ('wechaty');
-  import { onMessage }             from ('./event/on-message');
-  import { onFriendship }          from ('./event/on-friend');
-  import { onRoomJoin }            from ('./event/on-room-join');
+  import { config, Wechaty,log  }  from "wechaty";
+  import { onMessage }             from "./event/on-message";
+  import { onFriendship }          from "./event/on-friend";
+  import { onRoomJoin }            from "./event/on-room-join";
   
   const welcome = `
   =============== Powered by Wechaty ===============

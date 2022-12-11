@@ -1,4 +1,4 @@
-  import { Friendship, Wechaty } from ('wechaty');
+  import { Friendship, Wechaty } from "wechaty";
    // Friendship, Wechaty, Room
 
   async function onFriendship (
