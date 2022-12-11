@@ -1,9 +1,9 @@
-import { getChatGPTReply } from '../chatGPT.js'
-const {
+ const { getChatGPTReply } = require('../chatGPT.js')
+ const {
     Message,
     FileBox,
     Wechaty,
-  }             = require('wechaty')
+  } = require('wechaty')
   
   async function onMessage(message) {
     try {
