@@ -1,9 +1,5 @@
- import { getChatGPTReply }  from ('../chatGPT.js')
- import {
-    Message,
-    FileBox,
-    Wechaty,
-  } from ('wechaty')
+ import { getChatGPTReply }  from ('../chatGPT.js');
+ import { Message, FileBox, Wechaty } from ('wechaty');
   
   async function onMessage(message) {
     try {
