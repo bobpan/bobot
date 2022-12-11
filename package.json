@@ -29,6 +29,7 @@
       "is-pr": "^1.1.0",
       "marked": "^1.1.0",
       "nodemon": "^2.0.3",
+      "chatgpt": "^2.0.5",
       "wechaty-puppet-mock": "^0.22.31",
       "wechaty-puppet-padplus": "^0.7.21",
       "wechaty-puppet-puppeteer": "^0.23.1",
