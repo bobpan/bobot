@@ -1,4 +1,4 @@
-import { ChatGPTAPI } from 'chatgpt'
+const { ChatGPTAPI }  = require('chatgpt')
 
 // 定义ChatGPT的配置
 const config = {
