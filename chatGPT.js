@@ -6,7 +6,10 @@
     AutoReply: true, // 是否自动回复
     sessionToken: process.env.CHATGPT_SESSION_TOKEN, // ChatGPT的sessionToken
   }
-  const api = new ChatGPTAPI(config)
+  //const api = new ChatGPTAPI(config)
+  var api = function (config){
+    return
+  }
 
   // 获取 chatGPT 的回复
   async function getChatGPTReply(content) {
