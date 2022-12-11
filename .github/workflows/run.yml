@@ -43,6 +43,7 @@ jobs:
         node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+          CHATGPT_SESSION_TOKEN: ${{ CHATGPT_SESSION_TOKEN }}
           keepLogin: true
     # make the changes between checkout and push
     #- name: push
@@ -85,6 +86,7 @@ jobs:
         node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+          CHATGPT_SESSION_TOKEN: ${{ CHATGPT_SESSION_TOKEN }}
   run_2nd:
     name: run 2nd
     needs: [build, run_1st]
@@ -114,6 +116,7 @@ jobs:
         node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+          CHATGPT_SESSION_TOKEN: ${{ CHATGPT_SESSION_TOKEN }}
   run_3rd:
     name: run 3rd
     needs: [build, run_2nd]
@@ -143,6 +146,7 @@ jobs:
         node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+          CHATGPT_SESSION_TOKEN: ${{ CHATGPT_SESSION_TOKEN }}
   run_4th:
     name: run 4th
     needs: [build, run_3rd]
@@ -172,3 +176,4 @@ jobs:
         node main.js
       env:
           WXCOM_BOT_KEY: ${{ secrets.WXCOM_BOT_KEY }}
+          CHATGPT_SESSION_TOKEN: ${{ CHATGPT_SESSION_TOKEN }}
