@@ -1,4 +1,4 @@
-  const { ChatGPTAPI }  = require('chatgpt')
+  const { ChatGPTAPI }  = import('chatgpt')
 
   // 定义ChatGPT的配置
   const config = {
@@ -17,16 +17,22 @@
       //  "ChatGPT 请求超时！最好开下全局代理。"
       timeoutMs: 2 * 60 * 1000,
     })
+  }
 
-    // // 如果你想要连续语境对话，可以使用下面的代码
-    // const conversation = api.getConversation();
-    // return await conversation.sendMessage(content, {
-    //   //  "ChatGPT 请求超时！最好开下全局代理。"
-    //   timeoutMs: 2 * 60 * 1000,
-    // });
+  // 获取 chatGPT 的回复
+  async function getChatGPTConvReply(content) {
+    await api.ensureAuth()
+
+    // 如果你想要连续语境对话，可以使用下面的代码调用ChatGPT的接口
+    const conversation = api.getConversation();
+    return await conversation.sendMessage(content, {
+      //  "ChatGPT 请求超时！最好开下全局代理。"
+      timeoutMs: 2 * 60 * 1000,
+    });
   }
 
   module.exports = {
     default: getChatGPTReply,
     getChatGPTReply,
+    getChatGPTConvReply,
   }
