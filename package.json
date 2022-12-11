@@ -3,7 +3,6 @@
     "version": "0.0.1",
     "description": "通过Wechaty实现的微信个人助理，可以帮助我们自动处理好友请求、消息回复和自动拉群动作",
     "main": "main.js",
-    "type": "module",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/bobpan/bobot.git"
